@@ -9,6 +9,7 @@ const ExpensesList = (props) => {
       return <h2 className="expenses-list__fallback">Found no expenses</h2>;
   }
 
+  // if value is there then show this
   return (
       <ul className="expenses-list">
           {props.items.map((expense) => (
