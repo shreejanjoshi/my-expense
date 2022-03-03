@@ -10,6 +10,13 @@ const Expenses = (props) => {
   const filterChangeHandler = (selectedYear) => {
     setFilteredYear(selectedYear);
   };
+
+  // pass function to it if function return true a certain item is kept if not not kepts and filter return brand new array
+  // date comes from app.js date
+  const filteredExpenses = props.items.filter(expense => {
+    return expense.date.getFullYear().toString() === filteredYear;
+  })
+
   return (
     <div>
       <Card className="expenses">
@@ -21,7 +28,7 @@ const Expenses = (props) => {
         {/* items is from app.s map take fun as a argument and fun executes for every element in the array*/}
         {/* I wanna map every expense into the expenseItem JSX element */}
         {/* we transform our array to an array fill of JSX item */}
-        {props.items.map((expense) => (
+        {filteredExpenses.map((expense) => (
           <ExpenseItem
             // to fix key error (66)/  add  props keys to help react identy iedisidure item
             key = {expense.id}
