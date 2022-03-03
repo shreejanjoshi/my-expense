@@ -23,6 +23,8 @@ const Expenses = (props) => {
         {/* we transform our array to an array fill of JSX item */}
         {props.items.map((expense) => (
           <ExpenseItem
+            // to fix key error (66)/  add  props keys to help react identy iedisidure item
+            key = {expense.id}
             title={expense.title}
             amount={expense.amount}
             date={expense.date}
