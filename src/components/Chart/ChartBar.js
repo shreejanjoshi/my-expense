@@ -6,7 +6,7 @@ const ChartBar = (props) => {
     // how much chartbar value should be filled
     let barFillHeight = '0%';
 
-    if(props.max > 0){
+    if(props.maxValue > 0){
         barFillHeight = Math.round((props.value / props.maxValue) * 100) + '%';
     }
 
